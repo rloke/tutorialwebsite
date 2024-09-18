@@ -31,12 +31,12 @@
             <!--<img src="images/central_park.jpg" alt="Central Park Image" width="500">-->
 
             <ul id="album">
-                <img<li id="photo"> src="images/winterland1.jpg"></li>
+                <!--<li id="photo"><img src="images/winterland1.jpg"></li>
                 <li id="photo"><img src="images/winterland2.jpg"></li>
                 <li id="photo"><img src="images/winterland3.jpg"></li>
                 <li id="photo"><img src="images/winterland4.jpg"></li>
                 <li id="photo"><img src="images/winterland5.jpg"></li>
-                <li id="photo"><img src="images/winterland6.jpg"></li>
+                <li id="photo"><img src="images/winterland6.jpg"></li>-->
             </ul>
           
         </main>
@@ -46,5 +46,23 @@
 
     </div>
     <!-- End Container -->
+
+    <script>
+        var photos = [];
+        var fileName = [];
+        var imageList = [];
+        var image;
+        var openList = '<li id="photo">';
+        var closeList = '</li>';
+
+        for(var i=0; i<6; i++) {
+            fileName.push("winterland"+(i+1));
+            photos.push('<img src="images/' + fileName[i] + '.jpg">');
+            image = openList + photos[i] + closeList;
+            imageList.push(image);
+        }
+
+        document.getElementById('album').innerHTML = imageList.join(' ');
+    </script>
 </body>
 </html>
